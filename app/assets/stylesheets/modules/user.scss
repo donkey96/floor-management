@@ -1,0 +1,27 @@
+.contents_row {
+  width: 600px;
+  height: 350px;
+  position: absolute;
+  top: 20%;
+  right: 30%;
+  background-color: lightskyblue;
+  border-radius: 8px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 30px;
+  padding: 20px 0px;
+  font-weight: bold;
+}
+
+.field {
+  padding-bottom: 10px;
+}
+
+.actions{
+  height: 40px;
+}
+.btn {
+  width: 100px;
+}

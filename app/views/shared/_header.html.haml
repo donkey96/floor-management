@@ -9,5 +9,4 @@
     =link_to "", class: "header_menu_customers" do
       顧客情報
   .header_edit-user
-    =link_to "", class: "header_edit-user__btn" do
-      ユーザー編集
+    =link_to"ログアウト", destroy_user_session_path, method: :delete, class: "header_edit-user__btn"
