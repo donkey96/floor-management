@@ -1,0 +1,53 @@
+.contents {
+  height: 100%;
+  width: 100%;
+  padding-top: 50px;
+  overflow: scroll;
+}
+
+.tables {
+  padding: 40px 230px 40px 230px ;
+}
+
+.table {
+  min-width: 900px;
+  min-height: 50px;
+  border: solid 1px ;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  &_body {
+    display: flex;
+    align-items: center;
+    padding: 15px; 
+    &_name {
+      font-size: 18px;
+      font-weight: bold;
+      padding-right: 30px;
+    }
+    &_customer-name {
+      padding-right: 15px;
+    }
+    &_people {
+      padding-right: 15px;
+    }
+    &_tel {
+      padding-right: 15px;
+    }
+    &_time {
+      padding-right: 40px;
+    }
+    &_text {
+      padding-right: 15px;
+    }
+    &_reservation {
+      margin: 0 0 0 auto;
+      background-color: lightgray;
+      padding: 5px;
+      border-radius: 5px;
+    }
+  }
+}
+.reservation_edit {
+  text-decoration: none;
+  color: black;
+}
