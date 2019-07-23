@@ -1,0 +1,45 @@
+.header {
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  background-color: green;
+  color: white;
+  &_logo {
+    font-size: 23px;
+    float: left;
+    line-height: 50px;
+    font-weight: bold;
+    margin-left: 10px;
+  }
+  &_menu {
+    float: left;
+    padding:20px 40px 10px 700px;
+    &_index {
+      padding-right: 30px;
+      color: white;
+      text-decoration: none;
+    }
+    &_reservation {
+      padding-right: 30px;
+      color: white;
+      text-decoration: none;
+    }
+    &_customers {
+      padding-right: 30px;
+      color: white;
+      text-decoration: none;
+    }
+  }
+  &_edit-user {
+    line-height: 50px;
+    padding-right: 40px;
+    float: right;
+    &__btn {
+    padding: 5px;
+    color: white;
+    text-decoration: none;
+    border: solid 1px white;
+    border-radius: 5px;
+    }
+  }
+}
