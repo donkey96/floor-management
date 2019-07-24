@@ -51,3 +51,24 @@
   text-decoration: none;
   color: black;
 }
+
+.title {
+  text-align: center;
+  padding-top: 60px;
+  font-size: 24px;
+}
+.new-table {
+  text-align: center;
+  padding-top: 20px;
+  .table_name{
+    width: 200px;
+    margin-right: 20px;
+  }
+  .submit-btn {
+    width: 60px;
+  }
+}
+
+hr {
+  width: 500px;
+}

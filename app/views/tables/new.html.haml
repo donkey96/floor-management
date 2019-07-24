@@ -1,0 +1,11 @@
+.wrapper
+  = render 'shared/header'
+  .contents
+    .title
+      テーブル登録
+      %hr/
+    .form
+      = form_for [@table]  do |f|
+        .new-table
+          = f.text_field :name, class: "table_name", placeholder: "テーブル名"
+          = f.submit '登録', class: "submit-btn"
