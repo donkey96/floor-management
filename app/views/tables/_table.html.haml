@@ -1,171 +1,18 @@
-.table
-  .table_body
-    .table_body_name
-      101
-    .table_body_customer-name
-      サトウ様
-    .table_body_people
-      3名
-    .table_body_tel
-      123-4567-8910
-    .table_body_time
-      19:00
-    .table_body_text
-      席のみ。<br>
-      個室希望。<br>
-      ナッツ類にアレルギーあり。<br>
-      お誕生日ケーキの持ち込みあり。
-    .table_body_reservation
-      削除
-.table
-  .table_body
-    .table_body_name
-      102
-    .table_body_customer-name
+- current_user.tables.each do |table|
+  .table
+    .table_body
+      .table_body_name
+        = table.name
+      .table_body_customer-name
 
-    .table_body_people
-      
-    .table_body_tel
-      
-    .table_body_time
-      
-    .table_body_text
-      
-    .table_body_reservation
-      =link_to "", class: "reservation_edit" do
-        追加
-.table
-  .table_body
-    .table_body_name
-      103
-    .table_body_customer-name
-
-    .table_body_people
-      
-    .table_body_tel
-      
-    .table_body_time
-      
-    .table_body_text
-      
-    .table_body_reservation
-      =link_to "", class: "reservation_edit" do
-        追加
-.table
-  .table_body
-    .table_body_name
-      104
-    .table_body_customer-name
-      タカハシ様
-    .table_body_people
-      8名
-    .table_body_tel
-      111-1111-1111
-    .table_body_time
-      12:00
-    .table_body_text
-      5000円コース。飲み放題。
-    .table_body_reservation
-      削除
-.table
-  .table_body
-    .table_body_name
-      105
-    .table_body_customer-name
-    
-    .table_body_people
-      
-    .table_body_tel
-      
-    .table_body_time
-      
-    .table_body_text
-      
-    .table_body_reservation
-      =link_to "", class: "reservation_edit" do
-        追加
-.table
-  .table_body
-    .table_body_name
-      106
-    .table_body_customer-name
-    
-    .table_body_people
-      
-    .table_body_tel
-      
-    .table_body_time
-      
-    .table_body_text
-      
-    .table_body_reservation
-      =link_to "", class: "reservation_edit" do
-        追加
-.table
-  .table_body
-    .table_body_name
-      107
-    .table_body_customer-name
-    
-    .table_body_people
-      
-    .table_body_tel
-      
-    .table_body_time
-      
-    .table_body_text
-      
-    .table_body_reservation
-      =link_to "", class: "reservation_edit" do
-        追加
-.table
-  .table_body
-    .table_body_name
-      108
-    .table_body_customer-name
-    
-    .table_body_people
-      
-    .table_body_tel
-      
-    .table_body_time
-      
-    .table_body_text
-      
-    .table_body_reservation
-      =link_to "", class: "reservation_edit" do
-        追加
-.table
-  .table_body
-    .table_body_name
-      109
-    .table_body_customer-name
-    
-    .table_body_people
-      
-    .table_body_tel
-      
-    .table_body_time
-      
-    .table_body_text
-      
-    .table_body_reservation
-      =link_to "", class: "reservation_edit" do
-        追加
-.table
-  .table_body
-    .table_body_name
-      110
-    .table_body_customer-name
-    
-    .table_body_people
-      
-    .table_body_tel
-      
-    .table_body_time
-      
-    .table_body_text
-      
-    .table_body_reservation
-      =link_to "", class: "reservation_edit" do
-        追加
+      .table_body_people
+        
+      .table_body_tel
+        
+      .table_body_time
+        
+      .table_body_text
+        
+      .table_body_reservation
+        =link_to "", class: "reservation_edit" do
+          追加
