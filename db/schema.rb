@@ -10,18 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_24_071001) do
+ActiveRecord::Schema.define(version: 2019_07_25_112352) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "customers", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "tel", null: false
+    t.string "time"
+    t.string "people"
+    t.text "text"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_customers_on_user_id"
+  end
+
+  create_table "customers_tables", force: :cascade do |t|
+    t.bigint "customer_id"
+    t.bigint "table_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["customer_id"], name: "index_customers_tables_on_customer_id"
+    t.index ["table_id"], name: "index_customers_tables_on_table_id"
+  end
+
   create_table "tables", force: :cascade do |t|
     t.string "name", null: false
     t.bigint "user_id"
-    t.bigint "customer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["customer_id"], name: "index_tables_on_customer_id"
     t.index ["user_id"], name: "index_tables_on_user_id"
   end
 
@@ -37,5 +56,6 @@ ActiveRecord::Schema.define(version: 2019_07_24_071001) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "customers", "users"
   add_foreign_key "tables", "users"
 end
