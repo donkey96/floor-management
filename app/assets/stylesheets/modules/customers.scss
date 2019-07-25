@@ -7,6 +7,9 @@
   &_search-box {
     float: left;
     margin-right: 10px;
+    .customer-search {
+      width: 250px;
+    }
   }
   &_search-btn {
     float: left;

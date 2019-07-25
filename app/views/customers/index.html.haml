@@ -5,43 +5,18 @@
       .form_title
         顧客情報検索
       .form_search-box
-        %input(type="text")/
+        %input.customer-search{type: "text",name: "keyword",placeholder: "電話番号を入力してください"}/
       .form_search-btn
-        %input(type="button" value="検索")/
     .customers
-      .customer
-        .customer_name
-          サトウ様
-        .customer_people
-          ２名
-        .customer_tel
-          123-4567-8910
-        .customer_time
-          12:00
-        .customer_text
-          席のみ。  
-      .customer
-        .customer_name
-          スズキ様
-        .customer_people
-          ５名
-        .customer_tel
-          000-0000-0000
-        .customer_time
-          18:00
-        .customer_text
-          個室希望。<br>
-          5000円のコース。飲み放題あり。卵アレルギーの方がいらっしゃるそうです。<br>
-          お子様もいらっしゃるそうです。<br>
-          お誕生日のケーキの持ち込みあり。
-      .customer
-        .customer_name
-          タカハシ様
-        .customer_people
-          １２名
-        .customer_tel
-          111-1111-1111
-        .customer_time
-          19:00
-        .customer_text
-          席のみ
+      - @customers.each do |customer|
+        .customer
+          .customer_name
+            = customer.name + "様"
+          .customer_people
+            = customer.people + "名"
+          .customer_tel
+            = customer.tel
+          .customer_time
+            = customer.time
+          .customer_text
+            = customer.text
