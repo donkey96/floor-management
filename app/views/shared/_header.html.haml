@@ -4,8 +4,7 @@
   .header_menu
     =link_to "テーブル登録",new_table_path, class: "header_menu_new"
     =link_to "テーブル一覧",root_path, class: "header_menu_index"
-    =link_to "", class: "header_menu_reservation" do
-      当日予約
+    =link_to "当日予約",new_customer_path, class: "header_menu_reservation" 
     =link_to "顧客情報",customers_path, class: "header_menu_customers"
   .header_edit-user
     =link_to"ログアウト", destroy_user_session_path, method: :delete, class: "header_edit-user__btn"

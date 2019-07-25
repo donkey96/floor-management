@@ -1,0 +1,15 @@
+.wrapper
+  = render 'shared/header'
+  .contents
+    .title
+      予約登録
+      %hr/
+    .form
+      = form_for [@customer]  do |f|
+        .new-input
+          = f.text_field :name, class: "input-box", placeholder: "顧客名"
+          = f.text_field :people, class: "input-box", placeholder: "人数"
+          = f.text_field :tel, class: "input-box", placeholder: "電話番号"
+          = f.text_field :time, class: "input-box", placeholder: "予約時間"
+          = f.text_area :text, class: "input-area", placeholder: "備考欄"
+          = f.submit '登録', class: "submit-btn"
