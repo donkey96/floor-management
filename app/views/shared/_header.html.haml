@@ -6,7 +6,6 @@
     =link_to "テーブル一覧",root_path, class: "header_menu_index"
     =link_to "", class: "header_menu_reservation" do
       当日予約
-    =link_to "", class: "header_menu_customers" do
-      顧客情報
+    =link_to "顧客情報",customers_path, class: "header_menu_customers"
   .header_edit-user
     =link_to"ログアウト", destroy_user_session_path, method: :delete, class: "header_edit-user__btn"
