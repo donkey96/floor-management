@@ -1,0 +1,50 @@
+.form {
+  padding: 30px 30px 10px 30px;
+  &_title {
+    font-size: 20px;
+    padding-bottom: 15px;
+  }
+  &_search-box {
+    float: left;
+    margin-right: 10px;
+    .customer-search {
+      width: 250px;
+    }
+  }
+}
+.message {
+  padding-top: 40px;
+  padding-left: 20px;
+}
+
+.customers {
+  padding-top: 60px;
+}
+
+.customer {
+  display: flex;
+  margin: 0px 100px;
+  border: solid 1px;
+  &_name {
+    margin: 10px;
+  }
+  &_people {
+    margin: 10px;
+  }
+  &_tel {
+    margin: 10px;
+  }
+  &_day {
+    margin: 10px;
+  }
+  &_time {
+    margin: 10px;
+  }
+  &_text {
+    margin: 10px;
+  }
+
+}
+.coment {
+  text-align: center;
+}
