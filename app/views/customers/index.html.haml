@@ -5,8 +5,12 @@
       .form_title
         顧客情報検索
       .form_search-box
-        %input.customer-search{type: "text",name: "keyword",placeholder: "電話番号を入力してください"}/
-      .form_search-btn
+        = form_tag('/customers', method: :get)  do
+          %input.customer-search{type: "text",name: "keyword",placeholder: "電話番号を入力してください",val: ""}/ 
+          %input.form_search-btn{type: "submit", value: "検索"}/
+    .message
+      ・電話番号((-)ハイフンを含む)を入力することで顧客情報を検索できます。<br>
+      ・予約日(例: 1/1)を入力することで検索したい日程の予約を一覧表示できます。
     .customers
       - @customers.each do |customer|
         .customer
@@ -16,6 +20,8 @@
             = customer.people + "名"
           .customer_tel
             = customer.tel
+          .customer_day
+            = customer.day
           .customer_time
             = customer.time
           .customer_text

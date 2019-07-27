@@ -1,6 +1,6 @@
 class CustomersController < ApplicationController
   def index
-    @customers = Customer.where(user_id: current_user.id).where('tel LIKE(?)', "%#{params[:keyword]}%")
+    @customers = Customer.where(user_id: current_user.id).where('tel LIKE(?) or day LIKE(?)', "%#{params[:keyword]}%","%#{params[:keyword]}%")
   end
 
   def new
@@ -18,6 +18,6 @@ class CustomersController < ApplicationController
 
   private
   def customer_params
-    params.require(:customer).permit(:name, :people, :tel ,:time, :text).merge(user_id: current_user.id)
+    params.require(:customer).permit(:name, :people, :tel, :day, :time, :text).merge(user_id: current_user.id)
   end
 end
