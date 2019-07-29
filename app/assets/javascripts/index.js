@@ -1,4 +1,4 @@
-$(function () {
+$(document).on('turbolinks:load',function () {
 
 var search_list = $(".customers");
 
@@ -22,6 +22,9 @@ function appendCustomer(customer) {
                 <div class="customer_text">
                   ${ customer.text }
                 </div>
+                <select name="tables_select-box" size="1" multiple class="customer_tables_select-box">
+                <option val="">▼テーブルを選択して下さい</option>
+                </select>
                 <input type="button" value="追加" class="customer_add-btn">
               </div>`
   search_list.append(html);
