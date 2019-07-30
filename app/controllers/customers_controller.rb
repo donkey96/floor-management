@@ -1,6 +1,10 @@
 class CustomersController < ApplicationController
   def index
     @customers = Customer.where(user_id: current_user.id).where('tel LIKE(?) or day LIKE(?)', "%#{params[:keyword]}%","%#{params[:keyword]}%")
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def new
