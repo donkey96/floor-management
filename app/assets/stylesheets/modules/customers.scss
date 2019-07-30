@@ -26,29 +26,30 @@
   margin: 0px 100px;
   border: solid 1px;
   &_name {
-    margin: 10px;
+    margin: 18px 10px 5px 10px;
   }
   &_people {
-    margin: 10px;
+    margin: 18px 10px 5px 10px;
   }
   &_tel {
-    margin: 10px;
+    margin: 18px 10px 5px 10px;
   }
   &_day {
-    margin: 10px;
+    margin: 18px 10px 5px 10px;
   }
   &_time {
-    margin: 10px;
+    margin: 18px 10px 5px 10px;
   }
   &_text {
-    margin: 10px;
+    margin: 18px 10px 5px 10px;
+    width: 500px;
   }
   &_tables_select-box {
     margin: 10px;
     padding: 5px;
   }
   &_add-btn {
-    margin: 10px;
+    margin: 18px 5px 5px 10px;
     
   }
 }
