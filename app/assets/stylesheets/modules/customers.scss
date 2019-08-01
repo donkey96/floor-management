@@ -27,32 +27,55 @@
   border: solid 1px;
   &_name {
     margin: 18px 10px 5px 10px;
+    min-width: 75px;
+    max-width: 75px;
   }
   &_people {
     margin: 18px 10px 5px 10px;
+    min-width: 45px;
   }
   &_tel {
     margin: 18px 10px 5px 10px;
+    min-width: 130px;
   }
   &_day {
     margin: 18px 10px 5px 10px;
+    min-width: 45px;
   }
   &_time {
     margin: 18px 10px 5px 10px;
+    min-width: 45px;
+  }
+  &_table {
+    margin: 15px 10px 0px 10px;
+
   }
   &_text {
     margin: 18px 10px 5px 10px;
-    width: 500px;
-  }
-  &_tables_select-box {
-    margin: 10px;
-    padding: 5px;
+    min-width: 500px;
+    max-width: 500px;
   }
   &_add-btn {
-    margin: 18px 5px 5px 10px;
-    
+    margin: 10px 5px 5px 10px;
+    display: inline-block;
+    height: 45px;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: skyblue;
+    color: white;
+    border-bottom: solid 3px lightgray;
+    border-radius: 3px;
+  }
+  &_add-btn:active {
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+    border-bottom: none;
   }
 }
 .coment {
   text-align: center;
+}
+#customer_table_ids{
+  min-width: 120px;
+  height: 30px;
 }
