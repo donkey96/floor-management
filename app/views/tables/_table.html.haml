@@ -1,20 +1,18 @@
-- current_user.tables.each do |table|
-  .table
-    .table_body
-      .table_body_name
-        = table.name
-      .table_body_customer-name
+- @table.customers_tables.each do |customer_table|
+  .table_body
+    .table_body_customer-name
+      =customer_table.customer.name + "様"
+    .table_body_people
+      =customer_table.customer.people + "名"
+    .table_body_tel
+      =customer_table.customer.tel
+    .table_body_day
+      =customer_table.customer.day
+    .table_body_time
+      =customer_table.customer.time
+    .table_body_text
+      =customer_table.customer.text
+  .table_reservation
+    =link_to "", class: "reservation_edit" do
+      追加
 
-      .table_body_people
-        
-      .table_body_tel
-        
-      .table_body_day
-
-      .table_body_time
-        
-      .table_body_text
-        
-      .table_body_reservation
-        =link_to "", class: "reservation_edit" do
-          追加

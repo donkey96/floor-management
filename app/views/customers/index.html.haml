@@ -9,8 +9,8 @@
           %input.customer-search{type: "text",name: "keyword",placeholder: "電話番号を入力してください",value: ""}/ 
           %input.form_search-btn{type: "submit", value: "検索"}/
     .message
-      ・電話番号((-)ハイフンを含む)を入力することで顧客情報を検索できます。<br>
-      ・予約日(例: 1/1)を入力することで検索したい日程の予約を一覧表示できます。
+      ・電話番号(例: 123-4567-8910)を入力することで顧客情報を検索できます。<br>
+      ・予約日(例: 1111/11/11)を入力することで検索したい日程の予約を一覧表示できます。
     .customers
       - @customers.each do |customer|
         .customer
@@ -25,8 +25,8 @@
           .customer_time
             = customer.time
           .customer_table
-            = form_for [@customer]  do |f|
-              = f.collection_select :table_ids, Table.all, :id, :name, multiple: true
+            -# = form_for [@customer]  do |f|
+            -#   = f.collection_select :table_ids, Table.all, :id, :name, multiple: true
           .customer_text
             = customer.text
-          %input.customer_add-btn{type: "submit", value: "席予約"}/
+          -# %input.customer_add-btn{type: "submit", value: "席予約"}/

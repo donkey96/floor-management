@@ -1,6 +1,7 @@
 class TablesController < ApplicationController
 
   def index
+    @table = Table.find_by(params[:id])
   end
 
   def new

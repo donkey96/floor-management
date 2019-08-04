@@ -6,48 +6,63 @@
 }
 
 .tables {
-  padding: 40px 230px 40px 230px ;
+  padding: 40px 50px 40px 50px;
 }
 
 .table {
-  min-width: 900px;
+  display: flex;
   min-height: 50px;
   border: solid 1px ;
   border-radius: 5px;
-  margin-bottom: 10px;
+  margin: 10px;
+  &_name {
+    display: flex;
+    align-items: center;
+    padding: 15px; 
+    font-size: 18px;
+    font-weight: bold;
+    padding-right: 30px;
+  }
   &_body {
     display: flex;
     align-items: center;
     padding: 15px; 
-    &_name {
-      font-size: 18px;
-      font-weight: bold;
-      padding-right: 30px;
-    }
     &_customer-name {
-      padding-right: 15px;
+      margin: 10px;
+      min-width: 150px;
+      max-width: 150px;  
     }
     &_people {
-      padding-right: 15px;
+      margin: 10px;
+      min-width: 60px;
+      text-align: end;  
     }
     &_tel {
-      padding-right: 15px;
+      margin: 10px;
+      min-width: 130px;
     }
     &_day {
-      padding-right: 15px;
+      margin: 10px;
+      min-width: 100px;
     }
     &_time {
-      padding-right: 40px;
+      margin: 10px;
+      min-width: 50px;
     }
     &_text {
-      padding-right: 15px;
+      margin: 10px;
+      padding-left: 10px;
+      min-width: 500px;
+      max-width: 500px;  
     }
-    &_reservation {
-      margin: 0 0 0 auto;
-      background-color: lightgray;
-      padding: 5px;
-      border-radius: 5px;
-    }
+  }
+  &_reservation {  
+    display: inline-block;
+    margin: 10px;
+    height: 25px;
+    background-color: lightgray;
+    padding: 0.8em 1em;
+    border-radius: 5px;
   }
 }
 .reservation_edit {

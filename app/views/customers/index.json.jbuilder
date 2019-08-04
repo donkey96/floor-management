@@ -5,4 +5,5 @@ json.array! @customers do |customer|
   json.time customer.time
   json.people customer.people
   json.text customer.text
+  # json.table_name customer.table.name
 end

@@ -7,7 +7,8 @@
     .coment
       ・数字は半角で入力してください。<br>
       ・電話番号は(-)ハイフンを含めて入力してください。<br>
-      ・予約日は月と日を(/)スラッシュで区切ってください。<br>
+      ・予約日は西暦と月と日を(/)スラッシュで区切ってください。<br>
+      ・テーブルを複数選択する場合はshiftキーを押しながら選択してください。
     .form
       = form_for [@customer]  do |f|
         .new-input
@@ -16,5 +17,6 @@
           = f.text_field :tel, class: "input-box", placeholder: "電話番号"
           = f.text_field :day, class: "input-box", placeholder: "予約日"
           = f.text_field :time, class: "input-box", placeholder: "予約時間"
+          = f.collection_select :table_ids, Table.all, :id, :name,{}, {multiple: true}
           = f.text_area :text, class: "input-area", placeholder: "備考欄"
           = f.submit '登録', class: "submit-btn"

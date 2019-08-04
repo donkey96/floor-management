@@ -1,7 +1,8 @@
 class CustomersController < ApplicationController
   def index
-    @customer = Customer.new
-    @customers = Customer.where(user_id: current_user.id).where('tel LIKE(?) or day LIKE(?)', "%#{params[:keyword]}%","%#{params[:keyword]}%")
+    # @customer = Customer.new
+    # @customer.update(customer_params)
+    @customers = Customer.where(user_id: current_user.id).where('tel LIKE(?) or day LIKE(?) or name LIKE(?)', "%#{params[:keyword]}%","%#{params[:keyword]}%","%#{params[:keyword]}%")
     respond_to do |format|
       format.html
       format.json
@@ -23,6 +24,10 @@ class CustomersController < ApplicationController
 
   private
   def customer_params
-    params.require(:customer).permit(:name, :people, :tel, :day, :time, :text).merge(user_id: current_user.id)
+    params.require(:customer).permit(:name, :people, :tel, :day, :time, :text, { :table_ids => [] }).merge(user_id: current_user.id)
   end
+
+  # def table_params
+  #   params.permit({ :table_ids => [] })
+  # end
 end
