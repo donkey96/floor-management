@@ -10,7 +10,6 @@
 }
 
 .table {
-  display: flex;
   min-height: 50px;
   border: solid 1px ;
   border-radius: 5px;
@@ -26,6 +25,9 @@
   &_body {
     display: flex;
     align-items: center;
+    border: solid 1px;
+    margin: 3px;
+    border-radius: 5px;
     padding: 15px; 
     &_customer-name {
       margin: 10px;
@@ -55,24 +57,23 @@
       min-width: 500px;
       max-width: 500px;  
     }
+    &_reservation {
+      &_btn {  
+        margin-left: 40px;
+        display: inline-block;
+        height: 30px;
+        padding: 0em 1em;
+        border-radius: 5px;
+      }
+    }
+
   }
-  &_reservation {  
-    display: inline-block;
-    margin: 10px;
-    height: 25px;
-    background-color: lightgray;
-    padding: 0.8em 1em;
-    border-radius: 5px;
-  }
-}
-.reservation_edit {
-  text-decoration: none;
-  color: black;
+  
 }
 
 .title {
   text-align: center;
-  padding-top: 60px;
+  padding-top: 40px;
   font-size: 24px;
 }
 
