@@ -1,6 +1,7 @@
 class TablesController < ApplicationController
 
   def index
+    @table = Table.find_by(params[:customer_id])
   end
 
   def new
@@ -15,6 +16,7 @@ class TablesController < ApplicationController
       render :new
     end
   end
+
 
   private
   def table_params

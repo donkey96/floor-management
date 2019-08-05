@@ -2,4 +2,8 @@
   = render 'shared/header'
   .contents
     .tables
-      = render 'tables/table'
+      - current_user.tables.each do |table|
+        .table
+          .table_name
+            =table.name
+          = render partial: "table", collection: table.customers
