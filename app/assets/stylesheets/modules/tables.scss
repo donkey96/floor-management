@@ -14,16 +14,30 @@
   border: solid 1px ;
   border-radius: 5px;
   margin: 10px;
+  background-color: rgba(12, 216, 12, 0.63);
   &_name {
-    display: flex;
+    display: inline-block;
     align-items: center;
     padding: 15px; 
     font-size: 18px;
     font-weight: bold;
     padding-right: 30px;
   }
+  &_delete{
+    display: inline-block;
+    margin: 0px 5px 0px 1100px;
+    &_btn{
+      text-decoration: none;
+      color: black;
+      border: solid 1px;
+      border-radius: 3px;
+      padding: 2px;
+      background-color: yellow;
+    }
+  }
   &_body {
     display: flex;
+    background-color: white;
     align-items: center;
     border: solid 1px;
     margin: 3px;
@@ -58,12 +72,17 @@
       max-width: 500px;  
     }
     &_reservation {
-      &_btn {  
-        margin-left: 40px;
-        display: inline-block;
-        height: 30px;
-        padding: 0em 1em;
-        border-radius: 5px;
+      display: inline-block;
+      margin: 10px 5px 5px 40px;
+      height: 45px;
+      background: skyblue;
+      border-bottom: solid 3px lightgray;
+      border-radius: 3px;
+        &_edit {
+        text-decoration: none;
+        color: white;
+        line-height: 45px;
+        padding: 10px;
       }
     }
 

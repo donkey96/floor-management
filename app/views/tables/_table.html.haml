@@ -13,4 +13,4 @@
   .table_body_text
     =table.text
   .table_body_reservation
-    =link_to "予約削除","/customers_tables/#{table.id}", class: "table_body_reservation_destroy", method: :delete
+    = link_to '予約編集', "/customers/#{table.id}/edit", method: :get, class: "table_body_reservation_edit"

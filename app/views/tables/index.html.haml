@@ -1,9 +1,14 @@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 .wrapper
   = render 'shared/header'
   .contents
     .tables
       - current_user.tables.each do |table|
-        .table
+        .table{id: "table-#{table.id}"}
+          %input{name: "table[customer_ids][]", type: "hidden", value: "#{table.id}"}/
           .table_name
             =table.name
+          .table_delete
+            =link_to 'テーブル削除', "/tables/#{table.id}", method: :delete, class: "table_delete_btn"
           = render partial: "table", collection: table.customers

@@ -17,6 +17,10 @@ class TablesController < ApplicationController
     end
   end
 
+  def destroy
+    Table.find(params[:id]).destroy
+    redirect_to root_path, notice: "予約を削除しました"
+  end
 
   private
   def table_params
