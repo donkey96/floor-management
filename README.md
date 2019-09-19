@@ -5,6 +5,9 @@
 飲食店などにおいて重要事項である、現在の席情報や予約情報、顧客情報を管理できる。   
 誰でも簡単に使えるよう、なるべくシンプルに作成する。  
 
+URLはこちら  
+https://floor-management.herokuapp.com/  
+
 サンプルはこちらのアカウントでログインしてください。   
 __Email__: sample@gmail.com  
 __Password__: 11111111
