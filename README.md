@@ -1,37 +1,42 @@
-# DB設計
+# FloorManagement
 
-## usersテーブル
+## 概要
 
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false, unique: true|
-|mail|string|null: false, unique: true|
+飲食店などにおいて重要事項である、現在の席情報や予約情報、顧客情報を管理できる。
+誰でも簡単に使えるよう、なるべくシンプルに作成する。
 
-### Association
-- has_many :tables
+サンプルはこちらのアカウントでログインしてください。
+Email: sample@gmail.com
+Password: 11111111
 
-## tablesテーブル
+## 作成の目的
 
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false, unique: true|
-|user|reference|foreign_key: true|
-|customer|reference||
+学んだことを使って現在の仕事を効率化する方法として作成。
+現在の仕事と絡めることで自身のイメージするものを作るために足りない点などを確認する。
+全くのゼロから自力でアプリケーションを作ることで理解を深める。
 
-### Association
-- belongs_to :user
-- belongs_to :customer
+## サンプル画像
 
-## customersテーブル
+[![Image from Gyazo](https://i.gyazo.com/934c5e4df9700302c644211836aa6b0a.png)](https://gyazo.com/934c5e4df9700302c644211836aa6b0a)
 
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-|tel|integer|null: false|
-|time|integer|null: false|
-|people|integer|null: false|
-|text|text||
+## できること
 
+・任意のテーブルの作成、削除
+・使用中のテーブルクリックで色を変えることで常に確認できる
+・予約の登録、検索
+・顧客情報の検索
+・予約情報をテーブルに反映
 
-### Association
-- has many :tables
+## 工夫した点、苦労した点
+
+・登録された予約情報をテーブルから削除する際に顧客情報として残せるよう削除ではなく編集にした。
+・全くのゼロベースで開発するのが初めてだったのでマークアップから始めることでDB設計のイメージを明確にすることができた。
+・顧客情報をインクリメンタルサーチを使って効率よく検索できるようにした。
+・デザインや機能をなるべくシンプルにすることでユーザビリティを高めるよう心がけた。
+
+## 今後の修正点、追加点
+
+・全体的なレイアウトをよりシンプルでキャッチーなものにする。
+・現在の席情報(クリックして変更した色)を画面が遷移しても保持できるようにする。
+・携帯用のレイアウトも持たせる事でより使用の幅を広げる。
+・自動更新機能をつける事で常に最新の状態を保つ。(管理者が離れた位置から常に確認できる)
