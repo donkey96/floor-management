@@ -1,6 +1,5 @@
 .header
-  .header_logo
-    Floor Management
+  = link_to "Floor Management",root_path,class: "header_logo"
   .header_menu
     =link_to "テーブル登録",new_table_path, class: "header_menu_new"
     =link_to "テーブル一覧",root_path, class: "header_menu_index"
