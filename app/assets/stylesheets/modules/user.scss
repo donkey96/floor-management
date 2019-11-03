@@ -1,12 +1,19 @@
+html{
+  height: 100%;
+}
+body{
+  height: 100%;
+}
 .contents_row {
-  width: 600px;
-  position: absolute;
-  top: 10%;
-  right: 30%;
+  width: 100%;
+  height: 100%;
   background-color: lightskyblue;
-  border-radius: 8px;
   text-align: center;
   padding: 15px;
+  & a {
+    display: block;
+    margin-top: 20px;
+  }
 }
 
 h2 {
@@ -21,7 +28,11 @@ h2 {
 
 .actions{
   height: 40px;
-}
-.btn {
-  width: 100px;
+  .btn {
+    display: block;
+    margin: 10px auto;
+    padding: 8px 10px;
+    width: 150px;
+    border-radius: 7px;
+  }
 }

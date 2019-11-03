@@ -1,7 +1,7 @@
 .new-input {
   margin: 5px 500px;
   .input-box{
-    margin: 0px auto;
+    margin: 10px auto;
     display: block;
     width: 300px;
     border-style: ridge;
@@ -10,8 +10,10 @@
     border-radius: 5px;
   }
   .label{
-    margin: 5px 30px;
-    display: block;
+    padding: 5px 10px;
+    background:mediumseagreen;
+    color: white;
+    border-radius: 3px;
   }
   input[type="number"]::-webkit-inner-spin-button{
     -webkit-appearance: none;
@@ -46,7 +48,7 @@
   }
   #customer_table_ids{
     display: block;
-    margin: 5px auto;
+    margin: 10px auto;
     min-width: 310px;
     height: 100px;
     border-radius: 5px;
