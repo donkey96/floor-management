@@ -1,12 +1,18 @@
 .notification{
   .notice {
+    position: fixed;
+    width: 100%;
     background-color: green;
     color: white;
     text-align: center;
+    z-index: 1;
   }
   .alert {
+    position: fixed;
     background-color: red;
     color: white;
     text-align: center;
+    z-index: 1;
+    width: 100%;
   }
 }

@@ -12,5 +12,4 @@
     =table.time
   .table_body_text
     =table.text
-  .table_body_reservation
-    = link_to '予約編集', "/customers/#{table.id}/edit", method: :get, class: "table_body_reservation_edit"
+  = link_to '予約編集', "/customers/#{table.id}/edit", method: :get, class: "table_body_reservation"
