@@ -15,6 +15,7 @@
   border-radius: 5px;
   margin: 10px;
   background-color: rgba(12, 216, 12, 0.63);
+  letter-spacing: 1px;
   &_name {
     display: inline-block;
     align-items: center;
@@ -25,7 +26,7 @@
   }
   &_delete{
     display: inline-block;
-    margin: 0px 5px 0px 1120px;
+    margin: 0px 5px 0px 1100px;
     &_btn{
       text-decoration: none;
       color: white;
