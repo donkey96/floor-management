@@ -10,12 +10,22 @@
 }
 
 .table {
+  position: relative;
   min-height: 50px;
   border: solid 1px ;
   border-radius: 5px;
   margin: 10px;
   background-color: rgba(12, 216, 12, 0.63);
   letter-spacing: 1px;
+  &_check{
+    // opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 57px;
+    text-indent: -999px;
+  }
   &_name {
     display: inline-block;
     align-items: center;
