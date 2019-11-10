@@ -9,6 +9,21 @@
   padding: 40px 50px 40px 50px;
 }
 
+.table_reset {
+  display: block;
+  margin: 20px 10px;
+  height: 35px;
+  padding: 0.5em 1em;
+  font-size: 14px;
+  text-decoration: none;
+  background: lightskyblue;
+  color: white;
+  border-bottom: solid 3px lightgray;
+  border-radius: 3px;
+  cursor: pointer;
+
+}
+
 .table {
   position: relative;
   min-height: 50px;
@@ -18,7 +33,7 @@
   background-color: rgba(12, 216, 12, 0.63);
   letter-spacing: 1px;
   &_check{
-    // opacity: 0;
+    opacity: 0;
     position: absolute;
     top: 0;
     left: 0;
@@ -89,7 +104,7 @@
       text-decoration: none;  
       border-radius: 7px;
       background-color: whitesmoke;
-      border: solid 1px lightgray;
+      border: solid 1px gray;
     }
 
   }

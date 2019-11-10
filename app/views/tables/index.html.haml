@@ -2,6 +2,8 @@
   = render 'shared/header'
   .contents
     .tables
+      %button.table_reset
+        着席状態を全て解除
       - current_user.tables.each do |table|
         .table{id: "table-#{table.id}"}
           %input{name: "table[customer_ids][]", type: "hidden", value: "#{table.id}"}/
