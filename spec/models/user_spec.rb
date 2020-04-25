@@ -6,5 +6,10 @@ describe User do
       user.valid?
       expect(user.errors[:email]).to include("を入力してください")
     end
+    it "passwordがない場合は登録できない" do
+      user = User.new(email: "hogehoge@gmail.com", password:"", password_confirmation: "00000000")
+      user.valid?
+      expect(user.errors[:password]).to include("を入力してください")
+    end
   end
 end
