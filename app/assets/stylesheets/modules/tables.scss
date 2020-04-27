@@ -50,6 +50,7 @@
     padding-right: 30px;
   }
   &_delete{
+    position: relative;
     display: inline-block;
     margin: 0px 5px 0px 1100px;
     &_btn{
@@ -58,7 +59,7 @@
       border: solid 1px white;
       border-radius: 5px;
       padding: 5px;
-    }
+   }
   }
   &_body {
     display: flex;
