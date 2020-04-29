@@ -1,6 +1,10 @@
 require 'rails_helper'
 describe User do
   describe '#create' do
+    it "email、password、password_confirmationが存在すれば登録できる" do
+      user = build(:user)
+      expect(user).to be_valid
+    end
     it "emailがない場合は登録できない" do
       user = build(:user, email: "")
       user.valid?
