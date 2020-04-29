@@ -6,12 +6,12 @@ describe User do
       expect(user).to be_valid
     end
     it "emailがない場合は登録できない" do
-      user = build(:user, email: "")
+      user = build(:user, email: nil)
       user.valid?
       expect(user.errors[:email]).to include("を入力してください")
     end
     it "passwordがない場合は登録できない" do
-      user = build(:user, password: "")
+      user = build(:user, password: nil)
       user.valid?
       expect(user.errors[:password]).to include("を入力してください")
     end
