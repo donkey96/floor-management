@@ -1,12 +1,10 @@
 FactoryBot.define do
   factory :customer do
-    name    {nil}
-    tel     {nil}
-    time    {nil}
-    people  {nil}
-    text    {nil}
-    day     {nil}
-    user_id {"1"}
-
+    name    {Faker::Name.name}
+    tel     {Faker::String.random}
+    time    {Faker::String.random}
+    people  {Faker::String.random}
+    text    {Faker::Lorem.sentence}
+    day     {Faker::String.random}
   end
 end
