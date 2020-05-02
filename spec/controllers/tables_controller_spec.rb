@@ -51,6 +51,7 @@ describe TablesController, type: :controller do
   end
 
   describe '#create' do
+    let(:params) { { user_id: user.id, table: attributes_for(:table) } }
 
     context 'ログインしている場合' do
       before do
