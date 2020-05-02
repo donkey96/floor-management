@@ -59,7 +59,19 @@ describe TablesController, type: :controller do
       end
 
       context '保存に成功した場合' do
+        subject {
+          post :create,
+          params: params
+        }
 
+        it 'tableを保存すること' do
+          expect{ subject }.to change(Table, :count).by(1)
+        end
+
+        it 'root_pathへリダイレクトすること' do
+          subject
+          expect(response).to redirect_to(root_path)
+        end
       end
 
       context '保存に失敗した場合' do
