@@ -75,7 +75,21 @@ describe TablesController, type: :controller do
       end
 
       context '保存に失敗した場合' do
+        let(:invalid_params) { { user_id: user.id, table: attributes_for(:table, name: nil) } }
 
+        subject {
+          post :create,
+          params: invalid_params
+        }
+
+        it 'tableを保存しないこと' do
+          expect{ subject }.not_to change(Table, :count)
+        end
+
+        it '#newに遷移すること' do
+          subject
+          expect(response).to render_template :new
+        end
       end
     end
 
