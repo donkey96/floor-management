@@ -1,7 +1,7 @@
 class TablesController < ApplicationController
 
   def index
-    @table = Table.find_by(params[:customer_id])
+    @table = Table.where(params[:customer_id])
   end
 
   def new

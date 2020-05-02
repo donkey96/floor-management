@@ -22,5 +22,31 @@ describe TablesController, type: :controller do
         expect(response).to redirect_to(new_user_session_path)
       end
     end
-  end  
+  end
+  
+  describe 'GET #index' do
+    context 'ログインしている場合' do
+      before do
+        login user
+        get :index
+      end
+      it "@tableに正しい値が入っていること" do
+        tables = create_list(:table, 3)
+        expect(assigns(:table)).to match(tables)
+      end
+    
+      it "index.html.hamlに遷移すること" do
+        expect(response).to render_template :index
+      end
+    end
+
+    context 'ログインしていない場合' do
+      before do
+        get :index
+      end
+      it "ログイン画面にリダイレクトすること" do
+        expect(response).to redirect_to(new_user_session_path)
+      end
+    end
+  end
 end
