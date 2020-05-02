@@ -49,4 +49,25 @@ describe TablesController, type: :controller do
       end
     end
   end
+
+  describe '#create' do
+
+    context 'ログインしている場合' do
+      before do
+       login user
+      end
+
+      context '保存に成功した場合' do
+
+      end
+
+      context '保存に失敗した場合' do
+
+      end
+    end
+
+    context "ログインしていない場合" do
+
+    end
+  end
 end
