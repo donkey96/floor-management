@@ -103,7 +103,7 @@ describe TablesController, type: :controller do
   end
 
   describe 'DELETE #destroy' do
-
+  
     context 'ログインしている場合' do
       before do
       login user
@@ -117,11 +117,13 @@ describe TablesController, type: :controller do
       
       end
     end
-    
+
     context 'ログインしていない場合' do
     
       it 'ログイン画面にリダイレクトすること' do
-      
+        table = create(:table)
+        delete :destroy, params: {id: table.id}
+        expect(response).to redirect_to(new_user_session_path)
       end
     end
 
