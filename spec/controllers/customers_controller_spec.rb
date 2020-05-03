@@ -14,7 +14,7 @@ describe CustomersController, type: :controller do
       end
 
       it 'new.html.hamlに遷移すること' do
-
+        expect(response).to render_template :new
       end
     end
 
