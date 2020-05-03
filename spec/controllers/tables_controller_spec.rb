@@ -50,7 +50,7 @@ describe TablesController, type: :controller do
     end
   end
 
-  describe '#create' do
+  describe 'POST #create' do
     let(:params) { { user_id: user.id, table: attributes_for(:table) } }
 
     context 'ログインしている場合' do
@@ -100,5 +100,30 @@ describe TablesController, type: :controller do
       expect(response).to redirect_to(new_user_session_path)
       end
     end
+  end
+
+  describe 'DELETE #destroy' do
+
+    context 'ログインしている場合' do
+      before do
+      login user
+      end
+
+      it 'テーブルを削除すること' do
+      
+      end
+
+      it 'root_pathにリダイレクトすること' do
+      
+      end
+    end
+    
+    context 'ログインしていない場合' do
+    
+      it 'ログイン画面にリダイレクトすること' do
+      
+      end
+    end
+
   end
 end
