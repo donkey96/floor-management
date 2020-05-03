@@ -103,26 +103,27 @@ describe TablesController, type: :controller do
   end
 
   describe 'DELETE #destroy' do
-  
+
     context 'ログインしている場合' do
       before do
       login user
       end
 
       it 'テーブルを削除すること' do
-      
+        table = create(:table)
+        expect{delete :destroy, params: {id: table.id}}.to change(Table, :count).by(-1)
       end
 
       it 'root_pathにリダイレクトすること' do
-      
+        delete :destroy, params: {id: table.id}
+        expect(response).to redirect_to(root_path)
       end
     end
 
     context 'ログインしていない場合' do
     
       it 'ログイン画面にリダイレクトすること' do
-        table = create(:table)
-        delete :destroy, params: {id: table.id}
+         delete :destroy, params: {id: table.id}
         expect(response).to redirect_to(new_user_session_path)
       end
     end
