@@ -29,4 +29,22 @@ describe CustomersController, type: :controller do
     end
   end
   
+  describe 'GET #index' do
+    context 'ログインしている場合' do
+    
+      it "@customersに正しい値が入っていること" do
+      
+      end
+
+      it "index.html.hamlに遷移すること" do
+      
+      end
+    end
+
+    context 'ログインしていない場合' do
+
+      it "ログイン画面にリダイレクトすること" do
+      end
+    end
+  end
 end
