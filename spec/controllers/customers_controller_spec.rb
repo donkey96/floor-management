@@ -33,14 +33,10 @@ describe CustomersController, type: :controller do
     context 'ログインしている場合' do
     before do
       login user
-      get :index
+      get :index, params: {}
     end
-      it "@customersに正しい値が入っていること" do
-      
-      end
-
       it "index.html.hamlに遷移すること" do
-      
+        expect(response).to render_template :index
       end
     end
 
