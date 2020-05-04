@@ -31,7 +31,10 @@ describe CustomersController, type: :controller do
   
   describe 'GET #index' do
     context 'ログインしている場合' do
-    
+    before do
+      login user
+      get :index
+    end
       it "@customersに正しい値が入っていること" do
       
       end
@@ -42,8 +45,12 @@ describe CustomersController, type: :controller do
     end
 
     context 'ログインしていない場合' do
+      before do
+        get :index
+      end
 
       it "ログイン画面にリダイレクトすること" do
+        expect(response).to redirect_to(new_user_session_path)
       end
     end
   end
