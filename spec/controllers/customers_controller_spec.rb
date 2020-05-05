@@ -52,6 +52,7 @@ describe CustomersController, type: :controller do
   end
 
   describe "POST #create" do
+    let(:params) { { user_id: user.id, customer: attributes_for(:customer), table_ids: table.id}}
 
     context "ログインしている場合" do
       before do
@@ -59,13 +60,18 @@ describe CustomersController, type: :controller do
       end
   
       context "保存に成功した場合" do
+        subject {
+          post :create,
+          params: params
+        }
 
         it "customerを保存すること" do
-        
+          expect{ subject }.to change(Customer, :count).by(1)
         end
 
         it "root_pathにリダイレクトすること" do
-        
+          subject
+          expect(response).to redirect_to(root_path)
         end
       end
 
