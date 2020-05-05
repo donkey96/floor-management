@@ -33,8 +33,9 @@ describe CustomersController, type: :controller do
     context 'ログインしている場合' do
     before do
       login user
-      get :index, params: {}
+      get :index
     end
+
       it "index.html.hamlに遷移すること" do
         expect(response).to render_template :index
       end
@@ -109,12 +110,18 @@ describe CustomersController, type: :controller do
       before do
         login user
       end
-      it "`customerに正しい値が入っていること" do
-      
+      it "customerに正しい値が入っていること" do
+        customer = create(:customer)
+        get :edit,
+        params: { id: customer }
+        expect(assigns(:customer)).to eq customer
       end
 
       it "edit.html.hamlに遷移すること" do
-      
+        customer = create(:customer)
+        get :edit,
+        params: { id: customer }
+        expect(response).to render_template :edit
       end
     end
 
