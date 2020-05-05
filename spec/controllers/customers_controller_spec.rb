@@ -52,7 +52,7 @@ describe CustomersController, type: :controller do
   end
 
   describe "POST #create" do
-    let(:params) { { user_id: user.id, customer: attributes_for(:customer), table_ids: table.id}}
+    let(:params) { { user_id: user.id, table_ids: table.id, customer: attributes_for(:customer)}}
 
     context "ログインしている場合" do
       before do
@@ -76,13 +76,20 @@ describe CustomersController, type: :controller do
       end
 
       context "保存に失敗した場合" do
+        let(:invalid_params) { {  user_id: user.id, table_ids: table.id, customer: attributes_for(:customer, name: nil, tel: nil) } }
+
+        subject {
+          post :create,
+          params: invalid_params
+        }
 
         it "customerを保存しないこと" do
-
+          expect{ subject }.not_to change(Customer, :count)
         end
 
-        it "new.html.hamlに遷移すること" do
-        
+        it "new_customer_pathにリダイレクトすること" do
+          subject
+          expect(response).to redirect_to(new_customer_path)
         end
       end
     end
@@ -90,7 +97,7 @@ describe CustomersController, type: :controller do
     context "ログインしていない場合" do
       
       it "ログイン画面にリダイレクトすること" do
-        post :create
+        post :create, params: params
         expect(response).to redirect_to(new_user_session_path)
       end
     end
