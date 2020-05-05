@@ -13,7 +13,7 @@ class TablesController < ApplicationController
     if @table.save
       redirect_to root_path, notice: "テーブルを登録しました"
     else
-      render :new
+      redirect_to new_table_path, alert: "テーブル名を入力してください"
     end
   end
 

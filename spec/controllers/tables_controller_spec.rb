@@ -86,9 +86,9 @@ describe TablesController, type: :controller do
           expect{ subject }.not_to change(Table, :count)
         end
 
-        it '#newに遷移すること' do
+        it 'new_table_pathにリダイレクトすること' do
           subject
-          expect(response).to render_template :new
+          expect(response).to redirect_to(new_table_path)
         end
       end
     end

@@ -19,7 +19,7 @@ class CustomersController < ApplicationController
     if @customer.save
       redirect_to root_path, notice: "予約を登録しました"
     else
-      render :new
+      redirect_to new_customer_path, alert: "名前、もしくは電話番号が未入力です"
     end
   end
 
