@@ -106,7 +106,9 @@ describe CustomersController, type: :controller do
   context "GET #edit" do
 
     context "ログインしている場合" do
-    
+      before do
+        login user
+      end
       it "`customerに正しい値が入っていること" do
       
       end
@@ -117,9 +119,14 @@ describe CustomersController, type: :controller do
     end
 
     context "ログインしていない場合" do
+      before do
+        customer = create(:customer)
+        get :edit,
+        params: { id: customer }
+      end
     
       it "ログイン画面にリダイレクトすること" do
-
+        expect(response).to redirect_to(new_user_session_path)
       end
     end
   end
