@@ -50,4 +50,39 @@ describe CustomersController, type: :controller do
       end
     end
   end
+
+  describe "POST #create" do
+
+    context "ログインしている場合" do
+  
+      context "保存に成功した場合" do
+
+        it "customerを保存すること" do
+        
+        end
+
+        it "root_pathにリダイレクトすること" do
+        
+        end
+      end
+
+      context "保存に失敗した場合" do
+
+        it "customerを保存しないこと" do
+
+        end
+
+        it "new.html.hamlに遷移すること" do
+        
+        end
+      end
+    end
+    
+    context "ログインしていない場合" do
+
+      it "ログイン画面にリダイレクトすること" do
+      
+      end
+    end
+  end
 end
