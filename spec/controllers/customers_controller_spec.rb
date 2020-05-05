@@ -102,4 +102,25 @@ describe CustomersController, type: :controller do
       end
     end
   end
+
+  context "GET #edit" do
+
+    context "ログインしている場合" do
+    
+      it "`customerに正しい値が入っていること" do
+      
+      end
+
+      it "edit.html.hamlに遷移すること" do
+      
+      end
+    end
+
+    context "ログインしていない場合" do
+    
+      it "ログイン画面にリダイレクトすること" do
+
+      end
+    end
+  end
 end
