@@ -105,7 +105,7 @@ describe CustomersController, type: :controller do
   end
 
   context "GET #edit" do
-
+  
     context "ログインしている場合" do
       before do
         login user
@@ -133,6 +133,60 @@ describe CustomersController, type: :controller do
       end
     
       it "ログイン画面にリダイレクトすること" do
+        expect(response).to redirect_to(new_user_session_path)
+      end
+    end
+  end
+
+  describe "PATCH #update" do
+    let(:params) { { user_id: user.id, table_ids: table.id, customer: attributes_for(:customer)}}
+
+    context "ログインしている場合" do
+      before do
+        login user
+      end
+      it "@customerに正しい値が入っている" do
+         customer = create(:customer)
+        patch :update,
+        params: { id: customer, customer: params }
+        expect(assigns(:customer)).to eq customer
+      end
+      
+      context "@customerが変更できた場合" do
+
+        it "@customerが変更されていること" do
+          customer = create(:customer)  
+          patch :update,
+          params: { id: customer, customer: attributes_for(:customer, name: "aaa") }
+          customer.reload
+          expect(customer.name).to eq("aaa")
+        end
+
+        it "root_pathにリダイレクトされる" do
+          customer = create(:customer)
+          patch :update,
+          params: { id: customer, customer: params }
+          expect(response).to redirect_to(root_path)
+        end
+      end
+
+      context "@customerが変更できない場合" do
+
+        it ":editに遷移される" do
+          customer = create(:customer)
+          patch :update,
+          params: { id: customer, customer: attributes_for(:customer, name: nil) }
+          expect(response).to render_template :edit
+        end
+      end
+    end
+    
+    context "ログインしていない場合" do
+      before do
+        patch :update,
+        params: { id: customer }
+      end
+      it "ログイン画面にリダイレクトされる" do
         expect(response).to redirect_to(new_user_session_path)
       end
     end
