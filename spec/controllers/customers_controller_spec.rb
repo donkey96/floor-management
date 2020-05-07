@@ -173,7 +173,10 @@ describe CustomersController, type: :controller do
       context "@customerが変更できない場合" do
 
         it ":editに遷移される" do
-        
+          customer = create(:customer)
+          patch :update,
+          params: { id: customer, customer: attributes_for(:customer, name: nil) }
+          expect(response).to render_template :edit
         end
       end
     end
