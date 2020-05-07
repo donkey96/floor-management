@@ -139,13 +139,18 @@ describe CustomersController, type: :controller do
   end
 
   describe "PATCH #update" do
- 
+    let(:params) { { user_id: user.id, table_ids: table.id, customer: attributes_for(:customer)}}
+
     context "ログインしている場合" do
       before do
         login user
       end
       it "@customerに正しい値が入っている" do
-
+        table = create(:table)
+        customer = create(:customer)
+        patch :update,
+        params: { id: customer, customer: params }
+        expect(assigns(:customer)).to eq customer
       end
       
       context "@customerが変更できた場合" do
