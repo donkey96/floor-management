@@ -146,8 +146,7 @@ describe CustomersController, type: :controller do
         login user
       end
       it "@customerに正しい値が入っている" do
-        table = create(:table)
-        customer = create(:customer)
+         customer = create(:customer)
         patch :update,
         params: { id: customer, customer: params }
         expect(assigns(:customer)).to eq customer
@@ -156,7 +155,6 @@ describe CustomersController, type: :controller do
       context "@customerが変更できた場合" do
 
         it "@customerが変更されていること" do
-          table = create(:table)
           customer = create(:customer)  
           patch :update,
           params: { id: customer, customer: attributes_for(:customer, name: "aaa") }
@@ -165,7 +163,10 @@ describe CustomersController, type: :controller do
         end
 
         it "root_pathにリダイレクトされる" do
-        
+          customer = create(:customer)
+          patch :update,
+          params: { id: customer, customer: params }
+          expect(response).to redirect_to(root_path)
         end
       end
 
