@@ -137,4 +137,39 @@ describe CustomersController, type: :controller do
       end
     end
   end
+
+  describe "PATCH #update" do
+    
+    context "ログインしている場合" do
+    
+      it "@customerに正しい値が入っている" do
+
+      end
+      
+      context "@customerが変更できた場合" do
+
+        it "@customerが変更されていること" do
+
+        end
+
+        it "root_pathにリダイレクトされる" do
+        
+        end
+      end
+
+      context "@customerが変更できない場合" do
+
+        it ":editに遷移される" do
+        
+        end
+      end
+    end
+    
+    context "ログインしていない場合" do
+      
+      it "ログイン画面にリダイレクトされる" do
+        
+      end
+    end
+  end
 end
