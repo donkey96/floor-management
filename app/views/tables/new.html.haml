@@ -7,5 +7,5 @@
     .form
       = form_for [@table]  do |f|
         .new-input
-          = f.text_field :name, class: "input-box", placeholder: "テーブル名"
+          = f.text_field :name, class: "input-box", placeholder: "テーブル名", id: "name"
           = f.submit '登録', class: "submit-btn"
